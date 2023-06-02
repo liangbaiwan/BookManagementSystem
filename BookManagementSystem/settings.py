@@ -77,7 +77,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "bms2",  # 数据名
+        'NAME': "bms1",  # 数据名
         "USER": "root",  # 用户名
         "PASSWORD": "123456",
         "HOST": "localhost",  # 域名
