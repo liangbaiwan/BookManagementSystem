@@ -85,18 +85,18 @@ def logout(request):
 
 
 # 装饰器
-def librarian_decorator(func):
-    def inner(request, *args, **kwargs):
-        username = request.session.get('username')
-        nickname = request.session.get('nickname')
-        if username and nickname:
-            """用户登录过"""
-            return func(request, *args, **kwargs)
-        else:
-            """用户没有登录，重定向到登录页面"""
-            return redirect('/librarian/login/')
-
-    return inner
+# def librarian_decorator(func):
+#     def inner(request, *args, **kwargs):
+#         username = request.session.get('username')
+#         nickname = request.session.get('nickname')
+#         if username and nickname:
+#             """用户登录过"""
+#             return func(request, *args, **kwargs)
+#         else:
+#             """用户没有登录，重定向到登录页面"""
+#             return redirect('/librarian/login/')
+#
+#     return inner
 
 
 # 出版社操作
