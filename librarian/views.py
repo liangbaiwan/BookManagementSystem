@@ -100,7 +100,7 @@ def librarian_decorator(func):
 
 
 # 出版社操作
-@librarian_decorator
+# @librarian_decorator
 def add_publisher(request):
     if request.method == 'POST':
         # 1.获取内容
@@ -114,7 +114,7 @@ def add_publisher(request):
 
 
 # 出版社列表
-@librarian_decorator
+# @librarian_decorator
 def publisher_list(request, page=1):
     if request.method == "GET":
         publisher_obj_list = models.Publisher.objects.all()  # 获取出版社所有数据
@@ -136,7 +136,7 @@ def publisher_list(request, page=1):
         return render(request, "publisher_list.html", locals())
 
 
-@librarian_decorator
+# @librarian_decorator
 def update_publisher(request):
     """修改出版社"""
     if request.method == "GET":
@@ -164,7 +164,7 @@ def delete_publisher(request):
 
 
 
-@librarian_decorator
+# @librarian_decorator
 def add_book(request):
     """添加图书"""
     if request.method == "GET":
@@ -248,7 +248,7 @@ def book_list(request, page=1):
 
 
 
-@librarian_decorator
+# @librarian_decorator
 def update_book(request):
     """修改图书"""
     if request.method == "GET":
@@ -301,7 +301,7 @@ def delete_book(request):
     return redirect("librarian:book_list")
 
 
-@librarian_decorator
+# @librarian_decorator
 def add_author(request):
     if request.method == "GET":
         # 1. 获取所有图书
@@ -319,7 +319,7 @@ def add_author(request):
 
 
 # 作者列表
-@librarian_decorator
+# @librarian_decorator
 def author_list(request, page=1):
     # 第一种方法：
     # author_obj_list = models.Author.objects.all()
@@ -355,7 +355,7 @@ def author_list(request, page=1):
     return render(request, "author_list.html", locals())
 
 
-@librarian_decorator
+# @librarian_decorator
 def update_author(request):
     if request.method == "GET":
         id = request.GET.get("id")
@@ -387,7 +387,7 @@ def delete_author(request):
 
 
 # User 用户注册
-@librarian_decorator
+# @librarian_decorator
 def add_user(request):
     if request.method == "GET":
         # 查询所有的书
@@ -415,7 +415,7 @@ def add_user(request):
 
 
 
-@librarian_decorator
+# @librarian_decorator
 def user_list(request, page=1):
     user_obj_list = models.User.objects.all()
     paginator = Paginator(user_obj_list, 10)  # 实例化分页对象，每页显示10条数据
@@ -435,7 +435,7 @@ def user_list(request, page=1):
     return render(request, "user_list.html", locals())
 
 
-@librarian_decorator
+# @librarian_decorator
 def update_user(request):
     if request.method == "GET":
         id = request.GET.get("id")
@@ -468,7 +468,7 @@ def delete_user(request):
     return redirect("librarian:user_list")
 
 
-@librarian_decorator
+# @librarian_decorator
 def search(request):
     # 要前端中获取用户输入的关键字
     search_keywords = request.POST.get("search_keywords", "")
@@ -497,7 +497,7 @@ def search(request):
     return render(request, "search_result.html", locals())
 
 
-@librarian_decorator
+# @librarian_decorator
 def index(request, page=1):
     # 从数据中获取出版社数据、作者数据、图书数据、用户数据
     publisher_num = models.Publisher.objects.count()
